@@ -1,101 +1,82 @@
-# Plataforma de Control de Maternidad en Postas Médicas
+# Plataforma Web para Control de Maternidad en Postas Médicas de Arequipa - Perú
 
 ## Descripción
 
-Este proyecto consiste en una plataforma desarrollada en **Java** con **Programación Orientada a Objetos (POO)**, que permite gestionar el control de maternidad en postas médicas de **Arequipa, Perú**. La plataforma facilita el registro de pacientes, la asignación de citas, la gestión de pagos y el almacenamiento de historiales clínicos.
+Este proyecto es una plataforma web diseñada para optimizar el seguimiento de la atención prenatal en las postas médicas de Arequipa, Perú. La solución digital tiene como objetivo modernizar el registro y la gestión de citas, reducir la pérdida de información clínica y mejorar la comunicación entre las madres embarazadas y el personal médico. Esta iniciativa responde a la necesidad de incorporar tecnología en un sector tradicionalmente gestionado de forma manual, mejorando la calidad de la atención a las mujeres en situación de vulnerabilidad.
 
 ## Características
 
-- Registro de pacientes con distinción entre aseguradas (SIS) y no aseguradas.
-- Gestión de citas médicas y horarios de atención.
-- Control y almacenamiento de historiales clínicos.
-- Administración de pagos para pacientes sin seguro.
-- Optimización del flujo de trabajo del personal de salud.
+- **Registro de Gestantes:** Permite a las madres registrarse y gestionar su perfil de atención prenatal.
+- **Gestión de Citas:** Automatiza la programación y asignación de citas, optimizando el proceso de atención.
+- **Notificaciones Automáticas:** Envía recordatorios de citas para reducir la inasistencia y asegurar el seguimiento oportuno.
+- **Historial Clínico Digital:** Almacena de manera segura y organizada los registros médicos y consultas realizadas.
+- **Reportes y Estadísticas:** Genera informes para apoyar la toma de decisiones y el control de la atención prenatal.
+- **Interfaz Intuitiva:** Diseño accesible y fácil de usar, adaptado a las necesidades del usuario final.
 
 ## Tecnologías Utilizadas
 
-- **Lenguaje:** Java (POO)
-- **Base de Datos:** PostgreSQL
-- **Frameworks:** Spring Boot (opcional)
-- **Herramientas de Diagramación:** PlantUML, Draw.io
+- **Frontend:** HTML, CSS y JavaScript
+- **Backend:** Node.js (si aplica en la implementación) y módulos JavaScript
+- **Base de Datos:** MongoDB
+- **Entorno de Desarrollo:** Visual Studio Code en macOS
+- **Seguridad:** HTTPS, cifrado de datos y autenticación segura
 
-## Instalación
+## Instalación y Configuración
 
-### Requisitos
+### Requisitos Previos
 
-- Java 11 o superior
-- PostgreSQL instalado y configurado
-- Maven o Gradle (para gestión de dependencias)
+- Node.js y npm instalados
+- Instancia de MongoDB (local o remota)
+- Git instalado para clonar el repositorio
 
-### Pasos
+### Pasos de Instalación
 
-```bash
-# Clona el repositorio
-git clone https://github.com/ELMANCHE/ingenieria_de_software_2025.git
+1. **Clonar el repositorio:**
+    ```bash
+    git clone https://github.com/ELMANCHE/ingenieria_de_software_2025.git
+    ```
+2. **Navegar al directorio del proyecto:**
+    ```bash
+    cd ingenieria_de_software_2025
+    ```
+3. **Instalar las dependencias:**
+    ```bash
+    npm install
+    ```
+4. **Configurar las variables de entorno:**  
+   Crear un archivo `.env` en la raíz del proyecto con el siguiente contenido (modificar según corresponda):
+    ```
+    PORT=3000
+    MONGO_URI=your_mongodb_connection_string
+    ```
+5. **Iniciar la aplicación:**
+    ```bash
+    npm start
+    ```
 
-# Ingresa al directorio del proyecto
-cd ingenieria_de_software_2025
+## Uso
 
-# Configura la base de datos en application.properties o config.yml
+Una vez que la aplicación esté en ejecución, se puede acceder a través de un navegador web ingresando a `http://localhost:8085`. La plataforma permite:
+- Registro y gestión de la información de las madres embarazadas.
+- Programación y notificación automática de citas prenatales.
+- Acceso seguro al historial clínico y generación de reportes para el seguimiento de la atención.
 
-# Compila y ejecuta el proyecto
-mvn spring-boot:run
-```
-
-## Diagrama de Actividades
-
-El siguiente diagrama representa el flujo principal del sistema:
-
-```plantuml
-@startuml
-|Paciente|
-start
-:Registrar paciente;
-:Verificar seguro;
-if (¿Tiene SIS?) then (Sí)
-    :Asignar cita médica;
-else (No)
-    :Generar pago;
-    :Confirmar pago;
-    :Asignar cita médica;
-endif
-
-|Administrador del sistema|
-:Validar datos;
-:Actualizar base de datos;
-
-|Médico|
-:Atender consulta;
-:Actualizar historial clínico;
-if (¿Requiere exámenes?) then (Sí)
-    :Solicitar exámenes;
-    :Registrar resultados;
-endif
-
-stop
-@enduml
-```
-
-Puedes visualizarlo en [PlantUML Online](https://www.plantuml.com/plantuml/).
 
 ## Contribución
 
-Si deseas contribuir:
+Las contribuciones son bienvenidas. Si deseas colaborar en este proyecto:
+1. Haz un fork del repositorio.
+2. Crea una nueva rama para tus cambios.
+3. Realiza tus modificaciones y envía un Pull Request.
+4. Para cambios mayores, por favor abre un issue para discutir lo que te gustaría modificar.
 
-```bash
-# Haz un fork del repositorio
-git fork https://github.com/ELMANCHE/ingenieria_de_software_2025.git
 
-# Crea una nueva rama
-git checkout -b feature-nueva-funcionalidad
+## Contacto
 
-# Realiza los cambios y commitea
-git commit -am "Añadir nueva funcionalidad"
+Para consultas o soporte, por favor comunícate con el responsable del proyecto a través de emanchego@ulasalle.edu.pe 
 
-# Envía un pull request
-git push origin feature-nueva-funcionalidad
-```
+---
 
-## Licencia
+*Este proyecto forma parte del programa de Ingeniería de Software 2025. Todos los derechos reservados.*
 
-Este proyecto está bajo la licencia **MIT**.
+
